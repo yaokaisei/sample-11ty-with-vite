@@ -1,0 +1,21 @@
+<%#
+  Backend Integration
+  11tyの環境変数とvite側で生成されたマニフェストを用いてカスタム結合をおこなっています
+  このプロジェクトにおいて、HTML配信はviteの対象外であることに注意してください。
+  https://ja.vitejs.dev/guide/backend-integration.html
+_%>
+<%_ if (env === 'production') { _%>
+<%#
+  本番環境
+  `_data/manifest.js`で`manifest.json`をパースして受け取ったデータからレンダリング
+_%>
+<link rel="stylesheet" href="<%= manifest['src/assets/main.ts'].css %>" />
+<script type="module" src="<%= manifest['src/assets/main.ts'].file %>"></script>
+<% } else { _%>
+<%#
+  開発環境
+  viteが立ち上げたローカルサーバーからアセットファイルを読み込む
+_%>
+<script type="module" src="http://localhost:3000/@vite/client"></script>
+<script type="module" src="http://localhost:3000/src/assets/main.ts"></script>
+<%_ } _%>

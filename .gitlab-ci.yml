@@ -1,0 +1,14 @@
+image: mlc-deploy-minimum
+
+pages:
+  stage: deploy
+  script:
+  - n auto
+  - npm set progress false
+  - npm ci
+  - npm run build
+  artifacts:
+    paths:
+    - public
+  only:
+  - main

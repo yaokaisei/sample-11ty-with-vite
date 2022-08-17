@@ -1,0 +1,78 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: #222;
+    font-feature-settings: "palt" 1;
+    padding: 0;
+    margin: 0;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero {
+  max-width: 400px;
+  animation-duration: 4s;
+  animation-name: hero-move;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hero-move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.app-link {
+  background-color: #c72929;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 200px;
+  transition: .3s ease-in-out;
+}
+
+@keyframes app-link-move {
+  0% {
+    transform: translateY(0);
+    background-color: #c72929;
+  }
+  50% {
+    transform: translateY(10%);
+    background-color: transparent;
+  }
+  100% {
+    transform: translateY(0);
+    background-color: #4ac6ff;
+  }
+}
+
+.app-link:hover,
+.app-link:focus {
+  background-color: #4ac6ff;
+  animation-duration: .6s;
+  animation-name: app-link-move;
+}
