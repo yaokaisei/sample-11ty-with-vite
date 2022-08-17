@@ -1,3 +1,5 @@
+![main-hero](https://user-images.githubusercontent.com/57612617/185059009-5c053f10-527e-44da-8b15-10192821cd38.png)
+
 # Vite with Eleventy
 
 ViteとEleventyによる最小限のサンプルプロジェクトです。
